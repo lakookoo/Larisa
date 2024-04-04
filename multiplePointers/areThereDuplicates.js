@@ -6,16 +6,20 @@
 // OR the multiple pointers pattern.
 
 // Examples:
+
 // areThereDuplicates(1, 2, 3) // false
 // areThereDuplicates(1, 2, 2) // true 
 // areThereDuplicates('a', 'b', 'c', 'a') // true 
-
 // Restrictions:
+
 // Time - O(n)
+
 // Space - O(n)
 
 // Bonus:
+
 // Time - O(n log n)
+
 // Space - O(1)
 
 function areThereDuplicates() {
