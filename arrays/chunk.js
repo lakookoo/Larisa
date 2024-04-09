@@ -1,4 +1,4 @@
-function chunk(arr, size){
+function chunk1(arr, size){
     const chunked = [];
     for (let el of arr) {
         const last = chunked[chunked.length - 1];
@@ -21,4 +21,9 @@ function chunk2(arr, size){
 
     }
     return chunked;
+}
+
+module.exports = {
+    chunk1,
+    chunk2
 }
