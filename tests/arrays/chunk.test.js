@@ -1,13 +1,25 @@
 const { equal } = require('assert');
-const { chunk1, chunk2 } = require('../../arrays/chunk.js');
+const { chunk1, chunk2 } = require("../../arrays/chunk");
 
-function testChunks(chunk){
+function testChunks(chunk) {
+
+    test('function chunk exists', () => {
+        expect(typeof chunk).toEqual('function');
+    });
+
+    test('chunk divides an array of 5 elements with chunk size 3', () => {
+        const arr = [1, 2, 3, 4, 5];
+        const chunked = chunk(arr, 3);
+
+        expect(chunked).toEqual([[1, 2, 3], [4, 5]]);
+    });
+
     test('chunk an array into subarrays of specified size', () => {
         const arr = [1, 2, 3, 4, 5];
-        const size = 2;
+        const chunked = chunk(arr, 2);
         const expected = [[1, 2], [3, 4], [5]];
-    
-        expect(chunk(arr, size).toEqual(expected));
+
+        expect(chunked).toEqual(expected);
     });
 
     test('returns an empty arry when inpur array is empty', () => {
@@ -22,7 +34,7 @@ function testChunks(chunk){
         const size = 5;
         const expected = [[1, 2, 3]];
 
-        expect(chunk(arr, size).toEqual(expected));
+        expect(chunk(arr, size)).toEqual(expected);
     });
 }
 
