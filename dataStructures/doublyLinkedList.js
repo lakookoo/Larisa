@@ -93,4 +93,14 @@ class DoublyLinkedList {
         }
         return current;
     }
+
+    set(index, val){
+        let found = this.get(index)
+        if(found){
+            found.val = val
+            return true
+        } else {
+            return false
+        }
+    }
 }
