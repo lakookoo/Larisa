@@ -60,17 +60,37 @@ class DoublyLinkedList {
         return oldHead;
     }
 
-    unshift(val){
+    unshift(val) {
         let node = new Node(val);
-        if(!this.head){
+        if (!this.head) {
             this.head = node;
             this.tail = this.head;
         } else {
             this.head.prev = node
             node.next = this.head;
-            this.head = node; 
+            this.head = node;
         }
         this.length++;
-        return this;  
+        return this;
+    }
+
+    get(index) {
+        if (index < 0 || index >= this.length) return null;
+
+        if (index <= this.length / 2) {
+            let count = 0;
+            while (count !== index) {
+                current = current.next;
+                count++
+            }
+        } else {
+            count = this.length - 1;
+            current = this.tail;
+            while (count !== index){
+                current = current.prev;
+                count--;
+            }
+        }
+        return current;
     }
 }
