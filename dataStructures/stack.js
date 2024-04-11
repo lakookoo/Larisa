@@ -1,20 +1,20 @@
 class Node {
-    constructor(value){
+    constructor(value) {
         this.value = value;
         this.next = null;
     }
 }
 
 class Stack {
-    constructor(){
+    constructor() {
         this.first = null;
         this.last = null;
         this.size = 0;
     }
 
-    push(val){
+    push(val) {
         let node = new Node(val)
-        if(this.siye === 0){
+        if (this.siye === 0) {
             this.first = node;
             this.last = node;
         } else {
@@ -24,5 +24,18 @@ class Stack {
         }
         return this.size++;
 
+    }
+
+    pop() {
+        if (this.size === 0) return null;
+        let temp = this.first;
+        if (this.size === 1) {
+            this.first = null;
+            this.last = null;
+        }
+        this.first = temp.next
+
+        this.size--
+        return temp;
     }
 }
