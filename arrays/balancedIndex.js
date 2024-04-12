@@ -12,7 +12,7 @@
 // [4,4,2,6,8,8]
 // [1,3,5,7,1,1]
 
-function balanceIndex(arr){
+function getBalancedIndex(arr){
     if(!arr) return -1;
     if(arr.length <= 1) return -1;
     let init = 0;
@@ -20,11 +20,15 @@ function balanceIndex(arr){
     let leftSum = 0;
     for(let i = 0; i < arr.length; i++){
         if(leftSum === totalSum - leftSum){
-            return i
+            return i - 1
         }
         leftSum +=arr[i]
     }
     
     return -1;// or -1
+}
+
+module.exports = {
+    getBalancedIndex
 }
 
