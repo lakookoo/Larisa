@@ -16,9 +16,9 @@ class DoublyLinkedList {
 
     push(val) {
         let node = new Node(val)
-        if (!this.head) {
+        if (this.length === 0) {
             this.head = node;
-            this.tail = this.head;
+            this.tail = node;
         } else {
             this.tail.next = node;
             node.prev = this.tail;
@@ -134,4 +134,9 @@ class DoublyLinkedList {
         this.length--;
         return removed;
     }
+}
+
+module.exports = {
+    Node,
+    DoublyLinkedList
 }
