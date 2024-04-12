@@ -9,6 +9,7 @@
 // Explanation: output[0] = 5*3*4 = 60, output[1] = 2*3*4 = 24, output[2] = 2*5*4 = 40, output[3] = 2*5*3 = 30
 
 function productExceptSelf(arr){
+    if(arr.length === 0) return [];
     let output=[]
     for(let i = 0; i < arr.length; i++){
         let product = 1;
@@ -18,5 +19,9 @@ function productExceptSelf(arr){
         }
         output.push(product)
     }
-    return product
+    return output
+}
+
+module.exports = {
+    productExceptSelf
 }
