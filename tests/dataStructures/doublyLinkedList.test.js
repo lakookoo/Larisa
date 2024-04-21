@@ -65,7 +65,7 @@ describe('DoublyLinkedList push method', () => {
     expect(list.tail.next).toBeNull();
   });
 
-  test('shifting a values from the list', () => {
+  test('shifting values from the list', () => {
     let list =  new DoublyLinkedList();
     expect(list.shift()).toBe(undefined);
     
