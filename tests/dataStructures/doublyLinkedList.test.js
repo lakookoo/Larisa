@@ -44,6 +44,27 @@ describe('DoublyLinkedList push method', () => {
     expect(list.tail.prev.val).toBe(20);
     expect(list.tail.next).toBeNull();
   });
+
+  test('popping a values from the list', () => {
+    let list =  new DoublyLinkedList();
+    expect(list.pop()).toBe(undefined);
+    
+    list.push(10);
+    list.pop();
+    expect(list.pop()).toBe(undefined);
+    list.push(10);
+    list.push(20);
+    list.push(30);
+    list.pop();
+    expect(list.length).toBe(2);
+    expect(list.head.val).toBe(10);
+    expect(list.tail.val).toBe(20);
+    expect(list.head.prev).toBeNull();
+    expect(list.head.next.val).toBe(20);
+    expect(list.head.next.prev.val).toBe(10);
+    expect(list.tail.prev.val).toBe(10);
+    expect(list.tail.next).toBeNull();
+  });
 });
 
 
