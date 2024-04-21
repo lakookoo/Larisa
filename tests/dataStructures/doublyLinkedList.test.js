@@ -84,6 +84,28 @@ describe('DoublyLinkedList push method', () => {
     expect(list.tail.prev.val).toBe(20);
     expect(list.tail.next).toBeNull();
   });
+
+  test('adding a value to the beginning of the list', () => {
+    // Scenario 1: Adding to an empty list
+    let list = new DoublyLinkedList();
+    list.unshift(10);
+    expect(list.length).toBe(1);
+    expect(list.head.val).toBe(10);
+    expect(list.tail.val).toBe(10);
+    expect(list.head.next).toBeNull();
+    expect(list.head.prev).toBeNull();
+
+    // Scenario 2: Adding to a non-empty list
+    list.unshift(20);
+    expect(list.length).toBe(2);
+    expect(list.head.val).toBe(20);
+    expect(list.head.next.val).toBe(10);
+    expect(list.head.prev).toBeNull();
+    expect(list.tail.val).toBe(10);
+    expect(list.tail.prev.val).toBe(20);
+    expect(list.tail.next).toBeNull();
+
+    });
 });
 
 
