@@ -106,6 +106,21 @@ describe('DoublyLinkedList push method', () => {
     expect(list.tail.next).toBeNull();
 
     });
+
+    test('getting a value with a given index', () => {
+      let list = new DoublyLinkedList();
+      list.push(10);
+      expect(list.get(0).val).toBe(10);
+      expect(list.get(1)).toBeNull();
+      list.push(20);
+      list.push(30);
+      expect(list.get(1).val).toBe(20);
+      expect(list.length).toBe(3);
+      expect(list.head.val).toBe(10);
+      expect(list.tail.val).toBe(30);
+      expect(list.head.next.val).toBe(20);
+      expect(list.tail.prev.val).toBe(20);
+  });
 });
 
 
